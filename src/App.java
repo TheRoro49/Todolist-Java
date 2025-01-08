@@ -3,7 +3,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         // System.out.println("Hello, World!");
 
-        int entre;
+        int choix;
+        ToDoList todolist = new ToDoList();
        
         do {
             System.out.println("");
@@ -15,21 +16,20 @@ public class App {
             System.out.println("4-Marquer un tâche comme terminé ");
             System.out.println("0-Quitter ");
             Scanner scanner = new Scanner(System.in);
-            entre = scanner.nextInt();
-            System.out.println(entre);
-
-            switch (entre) {
+            choix = scanner.nextInt();
+        
+            switch (choix) {
                 case 1:
-                System.out.println("ajout");
+                todolist.addTask();
                     break;
                 case 2:
-                System.out.println("supression");
+                todolist.deleteTask();
                     break;
                 case 3:
-                System.out.println("affichage");
+                todolist.showTasks();
                     break;
                 case 4:
-                System.out.println("marquer comme terminé");
+                todolist.doneTask();
                     break;
                 case 0:
                 System.out.println("Au revoir!");
@@ -39,7 +39,7 @@ public class App {
                 System.out.println("Veillez entrer une réponse valide");
                     break;
             }
-        } while (entre!=0);
+        } while (choix!=0);
         
     }
 }
